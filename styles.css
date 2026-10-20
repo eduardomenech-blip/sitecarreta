@@ -1,0 +1,36 @@
+@import "tailwindcss" source("../");
+
+@theme {
+  --font-display: 'Barlow Condensed', system-ui, sans-serif;
+  --font-sans: 'Barlow', system-ui, sans-serif;
+  --color-asfalto: #16181b;
+  --color-asfalto-2: #22262b;
+  --color-laranja: #f26b1d;
+  --color-laranja-escuro: #d4560e;
+  --color-areia: #f5f1ea;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-areia);
+  color: var(--color-asfalto);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Faixa zebrada de sinalização rodoviária */
+.faixa {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-laranja) 0 14px,
+    var(--color-asfalto) 14px 28px
+  );
+}
+
+.campo {
+  @apply w-full rounded-md border-2 border-asfalto/15 bg-white px-3 py-2.5 text-base outline-none transition focus:border-laranja;
+}
